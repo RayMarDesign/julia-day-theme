@@ -22,13 +22,16 @@ var config = {
 
 
 // Cleanup Tasks
-gulp.task('clean', ['clean:fonts', 'clean:sass']);
+gulp.task('clean', ['clean:fonts', 'clean:sass', 'clean:js']);
 gulp.task('clean:fonts', function() {
     return del(config.appPath + '/fonts/**.*');
 });
 gulp.task('clean:sass', function() {
     return del([config.appPath + '/!(rtl).css',
                 config.appPath + '/maps/**.*']);
+});
+gulp.task('clean:js', function() {
+    return del(config.appPath + '/js/**.min.js');
 });
 
 // Bower Tasks
@@ -53,4 +56,10 @@ gulp.task('sass', ['clean:sass'], function() {
             includeContent: false
         }))
         .pipe(gulp.dest(config.appPath));
+});
+gulp.task('js', ['clean:js'], function() {
+    return gulp.src([config.bowerDir + '/jquery/dist/jquery.min.js',
+                     config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js',
+                     config.bowerDir + '/tether/dist/js/tether.min.js'])
+        .pipe(gulp.dest(config.appPath + '/js'));
 });
