@@ -12,7 +12,7 @@ var config = {
     bowerDir: './bower_components',
     autoprefixer: {
         browsers: [
-            'latest 2 versions',
+            'last 2 versions',
             'ie >= 9'
         ],
         cascade: false
