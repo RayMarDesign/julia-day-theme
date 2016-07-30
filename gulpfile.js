@@ -9,33 +9,44 @@ var gulp = require('gulp'),
 
 var config = {
     appPath: './app',
-    bowerDir: './bower_components'
+    bowerDir: './bower_components',
+    autoprefixer: {
+        browsers: [
+            'latest 2 versions',
+            'ie >= 9'
+        ],
+        cascade: false
+    }
 };
 
 
 
-gulp.task('clean', function() {
-    return del([
-        config.appPath + '/fonts/**.*',
-        config.appPath + '/css/juliaday*.*'
-    ]);
+// Cleanup Tasks
+gulp.task('clean', ['clean:fonts', 'clean:css']);
+gulp.task('clean:fonts', function() {
+    return del(config.appPath + '/fonts/**.*');
+});
+gulp.task('clean:css', function() {
+    return del(config.appPath + '/css/**.*');
 });
 
+// Bower Tasks
 gulp.task('bower', function() {
-   return bower()
+    return bower()
         .pipe(gulp.dest(config.bowerDir));
 });
 
-gulp.task('fonts', function() {
+// Compile Tasks
+gulp.task('fonts', ['clean:fonts'], function() {
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
         .pipe(gulp.dest(config.appPath + '/fonts'));
 });
-
-gulp.task('sass', function() {
-    return gulp.src(config.appPath + '/sass/juliaday.scss')
+gulp.task('sass', ['clean:css'], function() {
+    return gulp.src([config.appPath + '/sass/**.scss',
+                     config.bowerDir + '/font-awesome/scss/font-awesome.scss'])
         .pipe(sourcemaps.init())
             .pipe(sass()).on('error', sass.logError)
-            .pipe(autoprefixer({browsers: ['last 2 versions']}))
+            .pipe(autoprefixer(config.autoprefixer))
             .pipe(cleancss())
         .pipe(sourcemaps.write('.', {
             includeContent: false
