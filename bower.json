@@ -1,0 +1,16 @@
+{
+  "name": "julia-day-theme",
+  "description": "A Wordpress theme for Julia Day Nursery based on Underscores",
+  "main": "",
+  "authors": [
+    "Ray Martino (raymardesign@gmail.com)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/RayMarDesign/julia-day-theme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
