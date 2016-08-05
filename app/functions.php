@@ -44,7 +44,7 @@ function juliaday_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'juliaday' ),
+		'primary' => esc_html__( 'Primary Menu', 'juliaday' ),
 	) );
 
 	/*
@@ -61,7 +61,7 @@ function juliaday_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'juliaday_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => '333333',
 		'default-image' => '',
 	) ) );
 }
