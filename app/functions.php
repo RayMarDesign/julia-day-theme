@@ -112,11 +112,11 @@ function juliaday_scripts() {
 
 	wp_enqueue_script( 'juliaday-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'juliaday-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.2.4', true );
+
 	wp_enqueue_script( 'juliaday-tether-js', get_template_directory_uri() . '/js/tether.min.js', array(), '1.3.3', true );
 
-	wp_enqueue_script( 'juliaday-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('juliaday-tether-js'), '4.0.0alpha3', true );
-
-	wp_enqueue_script( 'juliaday-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.2.4', true );
+	wp_enqueue_script( 'juliaday-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('juliaday-jquery','juliaday-tether-js'), '4.0.0alpha3', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
