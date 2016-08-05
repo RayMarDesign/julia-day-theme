@@ -104,7 +104,7 @@ add_action( 'widgets_init', 'juliaday_widgets_init' );
 function juliaday_scripts() {
 	wp_enqueue_style( 'juliaday-font-awesome', get_template_directory_uri() . '/font-awesome.css' );
 
-    wp_enqueue_style( 'juliaday-google-fonts', 'https://fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' );
+    wp_enqueue_style( 'juliaday-google-fonts', 'https://fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' , array() , null);
 
 	wp_enqueue_style( 'juliaday-bootstrap-css', get_template_directory_uri() . '/bootstrap.css' );
 
