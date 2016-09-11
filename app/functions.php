@@ -102,11 +102,7 @@ add_action( 'widgets_init', 'juliaday_widgets_init' );
  * Enqueue scripts and styles.
  */
 function juliaday_scripts() {
-	wp_enqueue_style( 'juliaday-font-awesome', get_template_directory_uri() . '/font-awesome.css' );
-
     wp_enqueue_style( 'juliaday-google-fonts', 'https://fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' , array() , null);
-
-	wp_enqueue_style( 'juliaday-bootstrap-css', get_template_directory_uri() . '/bootstrap.css' );
 
     wp_enqueue_style( 'juliaday-style', get_stylesheet_uri() );
 
@@ -116,9 +112,6 @@ function juliaday_scripts() {
 
 	wp_enqueue_script( 'juliaday-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.2.4', true );
 
-	wp_enqueue_script( 'juliaday-tether-js', get_template_directory_uri() . '/js/tether.min.js', array(), '1.3.3', true );
-
-	wp_enqueue_script( 'juliaday-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('juliaday-jquery','juliaday-tether-js'), '4.0.0alpha3', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
