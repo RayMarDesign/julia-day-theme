@@ -102,14 +102,13 @@ add_action( 'widgets_init', 'juliaday_widgets_init' );
  * Enqueue scripts and styles.
  */
 function juliaday_scripts() {
+    // Default stylesheet
     wp_enqueue_style( 'juliaday-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'juliaday-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+    
+    // Underscores Javascripts
+	wp_enqueue_script( 'juliaday-navigation', get_template_directory_uri() . '/js/navigation.js', array('juliaday-jquery'), '20151215', true );
 	wp_enqueue_script( 'juliaday-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'juliaday-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.2.4', true );
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -118,6 +117,9 @@ function juliaday_scripts() {
     // Custom fonts
     wp_enqueue_style( 'juliaday-fonts-google', '//fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' , array() , null);
 	wp_enqueue_script( 'juliaday-fonts-fa', '//use.fontawesome.com/139fa6b860.js', array(), '4.6.3', false );
+
+    // jQuery
+	wp_enqueue_script( 'juliaday-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.2.4', true );
 }
 add_action( 'wp_enqueue_scripts', 'juliaday_scripts' );
 
