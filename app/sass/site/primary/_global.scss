@@ -1,0 +1,33 @@
+.site-main {
+    margin: 1.4em;
+    font-size: .8em;
+    line-height: 1.6em;
+}
+
+@media screen and (min-width: 30em) {
+    .site-main {
+        margin: 1.8em;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .site-main {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 57em) {
+    .site-main {
+        max-width: $size__site-max-width;
+        margin: 1.8em auto;
+    }
+}
+
+@media screen and (min-width: $size__site-max-width) {
+    .container {
+        position: relative;
+        max-width: $size__site-max-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

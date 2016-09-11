@@ -21,13 +21,21 @@
  * @uses juliaday_header_style()
  */
 function juliaday_custom_header_setup() {
+    add_theme_support( 'custom-logo' , array(
+        'width'         => 262,
+        'height'        => 262,
+        'flex-width'    => true,
+        'flex-height'   => false,
+    ) );
+    
 	add_theme_support( 'custom-header', apply_filters( 'juliaday_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'juliaday_header_style',
+		'default-image'         => '',
+		'default-text-color'    => 'f6f6f6',
+		'width'                 => 1600,
+		'height'                => 300,
+        'flex-width'            => true,
+        'flex-height'           => false,
+		'wp-head-callback'      => 'juliaday_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'juliaday_custom_header_setup' );

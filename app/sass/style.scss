@@ -1,1 +1,330 @@
 @import 'underscores';
+
+.search-form [type=search] {
+    width: 100%;
+}
+
+/*
+* # Header
+*/
+.site-header {
+    &::before {
+        background-color: #991000;
+        width: 100%;
+        height: 1.2rem;
+    }
+}
+
+.site-branding {
+    height: 18.75rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    overflow: hidden;
+}
+
+.site-logo {
+    padding: 1.2rem;
+    display: inline-block;
+    height: 100%;
+    background-color: hsla(0, 0%, 20%, .5);
+    box-shadow: 0 0 2rem 2rem hsla(0, 0%, 20%, .5);
+    
+    img {
+        height: 16.35rem;
+    }
+}
+
+.site-title {
+    font-family: $font__headings;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: .5em 0 0;
+    
+    a {
+        color: $color__brand-white;
+        text-decoration: none;
+    }
+    
+    &:after {
+        display: block;
+        content: "";
+        margin: .6em auto 0;
+        width: 3em;
+        border-bottom: 3px solid $color__background-body;
+        opacity: .6;
+    }
+}
+
+.site-description {
+    font-size: 2rem;
+    margin: 1em 0;
+    color: $color__brand-white;
+}
+
+.site-title,
+.site-description {
+    text-align: center;
+    //width: 100%; // was causing a horizontal scrollbar at 1280px when there was a custom icon
+}
+
+@media screen and (max-width: 48rem) {
+    .site-logo {
+        width: 100%;
+        box-shadow: none;
+        text-align: center;
+        padding: 1.2rem 0;
+    }
+}
+
+@media screen and (max-width: 30rem) {
+    .site-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .site-description {
+        font-size: 1.5rem;
+    }
+}
+
+/*
+* # Footer
+*/
+
+.footer-navigation {
+    min-height: 1.2rem;
+}
+
+$site-contact-padding: 2rem;
+.site-contact {
+    background-color: $color__brand-1;
+    color: $color__brand-white;
+    clear: both;
+    font-family: $font__headings;
+    font-size: 1.4rem;
+    padding: $site-contact-padding;
+    
+    .col {
+        float: left;
+        
+        div + div {
+            margin-top: $site-contact-padding;
+        }
+    }
+    
+    .col-1,
+    .col-2 {
+        width: 40%;
+        
+        div {
+            padding-right: $site-contact-padding;
+        }
+    }
+
+    .col-3 {
+        width: 20%;
+
+        img {
+            width: 100%;
+            max-width: 20rem;
+        }
+    }
+    
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+    
+    div div {
+        position: relative;
+        
+        i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 1.6rem;
+        }
+        
+        p {
+            display: inline-block;
+            margin: 0 0 0 2rem;
+            text-decoration: inherit;
+        }
+    }
+}
+
+@media screen and (min-width: 68rem) {
+    .site-contact {
+        .col-1 {
+            width: 35%
+        }
+        
+        .col-2 {
+            width: 25%
+        }
+        
+        .col-3 {
+            width: 40%;
+            
+            div {
+                float: left;
+                width: 50%;
+                padding: 0 0 0 ($site-contact-padding / 2);
+
+                &:first-child {
+                    padding: 0 ($site-contact-padding / 2) 0 0;
+                }
+
+                & + div {
+                    margin-top: inherit;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 48rem) {
+    .site-contact {
+        .col-1,
+        .col-2 {
+            width: 50%;
+        }
+        
+        .col-2 div {
+            padding: 0;
+        }
+        
+        .col-3 {
+            width: 100%;
+            padding-top: $site-contact-padding;
+            
+            div {
+                float: left;
+                width: 50%;
+                
+                &:first-child {
+                    padding: 0 $site-contact-padding 0 0;
+                }
+                
+                & + div {
+                    margin-top: inherit;
+                }
+            }
+        }
+    }
+}
+
+$site-contact-padding: 1.2rem;
+@media screen and (max-width: 37.5rem) {
+    .site-contact {
+        font-size: 1.2rem;
+        padding: $site-contact-padding;
+        
+        .col div + div {
+            margin-top: $site-contact-padding;
+        }
+        
+        .col-1,
+        .col-2,
+        .col-3 {
+            width: 100%;
+        }
+        
+        .col-2,
+        .col-3 {
+            padding-top: $site-contact-padding;
+        }
+        
+        .col-3 div {
+            padding: 0 0 0 $site-contact-padding;
+            
+            &:first-child {
+                padding: 0 $site-contact-padding 0 0;
+            }
+            
+            & + div {
+                margin-top: inherit;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 26rem) {
+    .site-contact {
+        .col-3 div {
+            width: 100%;
+            padding: 0;
+            
+            &:first-child {
+                padding: 0 0 $site-contact-padding;
+            }
+        }
+    }
+}
+
+.site-info {
+    background-color: $color__brand-black;
+    color: $color__brand-white;
+    padding: .6rem;
+}
+
+@media screen and (max-width: 37.5rem) {
+    .site-info {
+        padding-bottom: 5rem;
+    }
+}
+
+.site-contact a,
+.site-info a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+    
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+/*
+ * # Content
+ */
+
+.site-content {
+    background-color: $color__background-body;
+}
+
+/*
+ * # Sidebar & Widgets
+ */
+
+.site-content {
+    .widget-area {
+        padding: 1.2rem;
+        
+        section {
+            padding: 1rem;
+            background-color: $color__brand-white;
+            
+            .widget-title {
+                margin: 0 0 .3em;
+                line-height: 1em;
+                font-size: 1.8em
+            }
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0 2rem;
+            line-height: 1.3em;
+            
+            li + li {
+                margin-top: .6em;
+            }
+        }
+    }
+}

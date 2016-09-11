@@ -122,6 +122,25 @@ function juliaday_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'juliaday_scripts' );
 
+
+/**
+ * Add Search box to primary menu
+ */
+function add_search_box_to_menu( $items, $args ) {
+    if ( $args->menu_id == 'primary-menu' ) {
+        return $items . '<li id="menu-item-search" class="menu-item menu-item-has-children menu-item-search" aria-haspopup="true"><a><i class="fa fa-search" aria-hidden="true"></i></a><ul class="sub-menu"><li id="menu-item-search-form" class="menu-item menu-item-search-form"><a>' . get_search_form(false) . '</a></li></ul></li>';
+    }
+    if ( $args->menu_id == 'secondary-menu' ) {
+        return $items . '<li class="menu-item menu-item-search"><a><i class="fa fa-search" aria-hidden="true"></i>' . get_search_form(false) . '</a></li>';
+    }
+    
+
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
+
+
+
 /**
  * Implement the Custom Header feature.
  */

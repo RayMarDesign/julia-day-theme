@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+( function( $ ) {
 	var container, button, menu, links, subMenus, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -109,4 +109,29 @@
 			}
 		}
 	}( container ) );
-} )();
+    
+    // Hide/show toggle button on scroll
+
+	var position, direction, previous;
+
+	$(window).scroll(function(){
+		if( $(this).scrollTop() >= position ){
+			direction = 'down';
+			if(direction !== previous){
+				$('.menu-toggle').addClass('hide');
+				
+				previous = direction;
+			}
+		} else {
+			direction = 'up';
+			if(direction !== previous){
+				$('.menu-toggle').removeClass('hide');
+				
+				previous = direction;
+			}
+		}
+		position = $(this).scrollTop();
+	});
+
+} )( jQuery );
+
