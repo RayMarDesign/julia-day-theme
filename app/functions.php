@@ -61,7 +61,7 @@ function juliaday_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'juliaday_custom_background_args', array(
-		'default-color' => '333333',
+		'default-color' => 'd9d9d9',
 		'default-image' => '',
 	) ) );
 }
@@ -104,7 +104,6 @@ add_action( 'widgets_init', 'juliaday_widgets_init' );
 function juliaday_scripts() {
     // Default stylesheet
     wp_enqueue_style( 'juliaday-style', get_stylesheet_uri() );
-
     
     // Underscores Javascripts
 	wp_enqueue_script( 'juliaday-navigation', get_template_directory_uri() . '/js/navigation.js', array('juliaday-jquery'), '20151215', true );
