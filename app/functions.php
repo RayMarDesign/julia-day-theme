@@ -102,8 +102,6 @@ add_action( 'widgets_init', 'juliaday_widgets_init' );
  * Enqueue scripts and styles.
  */
 function juliaday_scripts() {
-    wp_enqueue_style( 'juliaday-google-fonts', 'https://fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' , array() , null);
-
     wp_enqueue_style( 'juliaday-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'juliaday-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -116,6 +114,10 @@ function juliaday_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+    // Custom fonts
+    wp_enqueue_style( 'juliaday-fonts-google', '//fonts.googleapis.com/css?family=Handlee|Droid+Serif:400,400italic,700,700italic' , array() , null);
+	wp_enqueue_script( 'juliaday-fonts-fa', '//use.fontawesome.com/139fa6b860.js', array(), '4.6.3', false );
 }
 add_action( 'wp_enqueue_scripts', 'juliaday_scripts' );
 
