@@ -14,7 +14,7 @@
 		margin: 0;
 		padding-left: 0;
         margin-right: 3.75rem;
-        z-index: 99998;
+        z-index: 9998;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -22,7 +22,7 @@
 			position: absolute;
 			top: 2.3em;
 			left: -999em;
-			z-index: 99999;
+			z-index: 9999;
 
 			ul {
 				left: -999em;
@@ -222,7 +222,7 @@
     color: $color__brand-white;
     font-size: 1rem;
     padding: .5em 1em;
-    z-index: 9999;
+    z-index: 10000;
 }
 
 .menu-toggle.hide {
