@@ -6,7 +6,6 @@
     background-color: $color__brand-1;
     font-family: $font__headings;
     font-size: 1.4rem;
-    min-height: 1.2rem;
 
 	ul {
 		display: none;
@@ -223,10 +222,15 @@
     font-size: 1rem;
     padding: .5em 1em;
     z-index: 10000;
+    transition: all ease-out 400ms;
 }
 
 .menu-toggle.hide {
     bottom: -3rem;
+    
+    .toggled & {
+        bottom: 1rem;
+    }
 }
 
 @media screen and (max-width: 52rem) {
@@ -246,11 +250,23 @@
 
 @media screen and (max-width: 37.5em) {
     .main-navigation {
-        .menu {
+        background-color: transparent;
+        
+        &.toggled {
             position: fixed;
-            top: 0;
-            margin: 1rem 1rem 5rem;
-            width: 85%;
+            bottom: 0;
+            padding: 1em;
+            z-index: 1;
+            
+            ul {
+                max-height: calc(100vh - 4.5em);
+                overflow-y: auto;
+            }
+        }
+        
+        .nav-menu {
+            margin-bottom: 2.5em;
+            background-color: $color__brand-2;
         }
         
         ul {
@@ -282,6 +298,21 @@
         }
         
         li {
+            &.menu-item-has-children {
+                & > a:after {
+                    content: ">";
+                    float: right;
+                    margin-left: .5em;
+                    transform: rotateZ(90deg);
+                    transition: transform ease-in 300ms;
+                }
+                
+                &:hover > a:after,
+                &.focus > a:after {
+                    transform: rotateZ(-90deg);
+                }
+            }
+            
             &.menu-item-search {
                 position: relative;
                 
