@@ -31,10 +31,19 @@
 	}
 
 	button.onclick = function() {
+        var focusedItems;
+        
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
+            
+            focusedItems = document.querySelectorAll('.main-navigation .focus');
+            
+            for ( i = 0, len = focusedItems.length; i < len; i++ ) {
+                focusedItems[i].className = focusedItems[i].className.replace( ' focus', '' );
+            }
+            
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
