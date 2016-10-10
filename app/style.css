@@ -839,18 +839,18 @@ a:hover, a:active {
     content: ">";
     float: right;
     margin-left: .5em;
-    -webkit-transform: rotateZ(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotateZ(-90deg);
+    -webkit-transform: rotateZ(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotateZ(90deg);
     transition: -webkit-transform ease-in 300ms;
     transition: transform ease-in 300ms;
     transition: transform ease-in 300ms, -webkit-transform ease-in 300ms;
   }
   .main-navigation li.menu-item-has-children:hover > a:after,
   .main-navigation li.menu-item-has-children.focus > a:after {
-    -webkit-transform: rotateZ(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotateZ(-90deg);
   }
   .main-navigation li.menu-item-search {
     position: relative;
