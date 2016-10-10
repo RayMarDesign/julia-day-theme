@@ -44,3 +44,12 @@ gulp.task('js', ['clean:js'], function () {
     return gulp.src(config.tasks.js.src)
         .pipe(gulp.dest(config.tasks.js.dest));
 });
+
+// Deployment Tasks
+gulp.task('deploy:dev', function () {
+    return gulp.src([
+        config.tasks.deploy.src + '/**/*.php',
+        config.tasks.deploy.src + '/**/*.css',
+        config.tasks.deploy.src + '/**/*.js'])
+        .pipe(gulp.dest(config.tasks.deploy.dev));
+});
