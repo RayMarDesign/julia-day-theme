@@ -46,7 +46,7 @@ gulp.task('js', ['clean:js'], function () {
 });
 
 // Deployment Tasks
-gulp.task('deploy:dev', function () {
+gulp.task('deploy:dev', ['sass'], function () {
     return gulp.src([
         config.tasks.deploy.src + '/**/*.php',
         config.tasks.deploy.src + '/**/*.css',
