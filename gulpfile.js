@@ -12,21 +12,21 @@ var gulp = require('gulp'),
 
 // Cleanup Tasks
 gulp.task('clean', ['clean:sass', 'clean:js']);
-gulp.task('clean:sass', function() {
+gulp.task('clean:sass', function () {
     return del(config.tasks.sass.clean);
 });
-gulp.task('clean:js', function() {
+gulp.task('clean:js', function () {
     return del(config.tasks.js.clean);
 });
 
 // Bower Tasks
-gulp.task('bower', function() {
+gulp.task('bower', function () {
     return bower()
         .pipe(gulp.dest(config.paths.components));
 });
 
 // Compile Tasks
-gulp.task('sass', ['clean:sass'], function() {
+gulp.task('sass', ['clean:sass'], function () {
     return gulp.src(config.tasks.sass.src)
         .pipe(sass(config.tasks.sass.config))
             .on('error', sass.logError)
@@ -40,7 +40,7 @@ gulp.task('sass', ['clean:sass'], function() {
             })*/
         .pipe(gulp.dest(config.tasks.sass.dest));
 });
-gulp.task('js', ['clean:js'], function() {
+gulp.task('js', ['clean:js'], function () {
     return gulp.src(config.tasks.js.src)
         .pipe(gulp.dest(config.tasks.js.dest));
 });
