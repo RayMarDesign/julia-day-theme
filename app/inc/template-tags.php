@@ -24,17 +24,34 @@ function juliaday_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'juliaday' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'juliaday' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	$posted_on = sprintf(
+		esc_html_x( 'published %s', 'post date', 'juliaday' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+    // Display the author avatar if the author has  Gravatar
+    $author_id = get_the_author_meta( 'ID' );
+    if ( juliaday_validate_gravatar( $author_id ) ) {
+        echo '<div class="meta-content has-avatar">';
+        echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
+    } else {
+        echo '<div class="meta-content">';
+    }
+
+	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+
+	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		/* translators: %s: post title */
+		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'juliaday' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		echo '</span>';
+	}
+    echo '</div><!-- .meta-content -->';
 
 }
 endif;

@@ -6,6 +6,67 @@
 	margin: 0 0 1.5em;
 }
 
+/* Post Meta */
+.entry-meta {
+    margin: 0 -1.555555555555556em;
+    padding: 2em 1.555555555555556em;
+    font-size: 90%;
+    font-style: italic;
+    text-align: center;
+    background: $color__brand-white;
+    
+    a {
+        font-weight: 700;
+    }
+    
+    @media screen and (min-width: 30em) {
+        margin: 0 -2em;
+        padding: 2em 2em;
+    }
+    
+    @media screen and (min-width: 57em) {
+        position: relative;
+        width: 100%;
+        width: 100vw;
+        left: 0;
+        left: calc((-100vw + 54em)/2);
+        overflow: hidden;
+    }
+}
+
+.author-avatar {
+    height: 50px;
+    width: 50px;
+    margin: 0 auto 1em;
+
+    img {
+        border-radius: 25%;
+    }
+
+}
+
+@media screen and (min-width: 50em) {
+    .has-avatar {
+        display: inline-block;
+        text-align: left;
+        width: 20em;
+    }
+    .author-avatar {
+        height: 70px;
+        width: 70px;
+        float: left;
+        margin-right: 1.5em;
+        margin-bottom: 0;
+    }
+}
+
+.byline,
+.posted-on,
+.entry-meta .comments-link {
+    display: block;
+    padding: 0;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;
