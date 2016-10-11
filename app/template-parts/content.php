@@ -17,6 +17,12 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
+        
+        if ( has_excerpt( $post->ID ) ) {
+            echo '<div class="deck">';
+            echo '<p>' . get_the_excerpt() . '</p>';
+            echo '</div><!-- .deck -->';
+        }
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
