@@ -142,5 +142,8 @@
 		position = $(this).scrollTop();
 	});
 
+    // Wrap centered images in a new figure element
+    $( 'img.aligncenter' ).wrap( '<figure class=".centered-image"></figure>' );
+
 } )( jQuery );
 
