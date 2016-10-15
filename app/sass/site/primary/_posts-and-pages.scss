@@ -1,9 +1,61 @@
+.entry-content a,
+.entry-summary a {
+    text-decoration: none;
+    border-bottom: 2px solid $color__link-underline;
+    
+    &:hover,
+    &focus {
+        border-bottom: 3px solid $color__link-underline;
+        box-shadow: inset 0 -3px 0 $color__link-underline;
+    }
+}
+
+.entry-meta a,
+.entry-footer a {
+    text-decoration: none;
+    
+    &:hover,
+    &:focus {
+        border-bottom: 2px solid $color__link-hover;
+    }
+}
+
 .sticky {
 	display: block;
 }
 
 .hentry {
 	margin: 0 0 1.5em;
+    padding-bottom: 2em;
+    
+    .single &,
+    .page & {
+        padding-bottom: 0;
+    }
+}
+
+.entry-title {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+        
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+    
+    @media screen and (min-width: 40em) {
+        margin-top: 1.5em;
+        font-size: 2.8em;
+        line-height: 1.3em;
+    }
 }
 
 .deck {
@@ -97,4 +149,92 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.site-content {
+    ol,
+    ul {
+        margin-left: 1.7em;
+        padding-left: 1.7em;
+    }
+    li {
+        line-height: 1.6em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+
+        ul li:first-child {
+            padding-top: 1em;
+        }
+            
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.deck,
+.entry-content {
+    margin: 1.5em 0 0;
+    
+    @media screen and (min-width: 50em) {
+        padding: 0 3em;
+    }
+}
+
+.entry-footer {
+	font-size: 90%;
+	font-style: italic;
+	text-align: center;
+    
+    &::before,
+    &::after {
+        display: block;
+        content: "";
+        width: 7em;
+        border-bottom: 1px solid $color__border-entry-footer;
+        margin: 2em auto;
+    }
+
+    &::before {
+        width: 3.5em;
+    }
+
+    @media screen and (min-width: 40em) {
+		padding: 0 1.5em;
+	}
+
+    span {
+        margin: .5em 0;
+        &::after {
+            content: "|";
+            padding: 0 1em;
+        }
+
+        &:last-of-type::after {
+            content: "";
+            padding: 0;
+        }
+
+        a {
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+}
+
+.site-content table {
+    font-size: 90%;
+    background-color: darken($color__brand-grey, 4%);
+    
+    th, td {
+        padding: .3em;
+    }
+    
+    tr:nth-child(even) {
+        background-color: lighten($color__brand-grey, 4%);
+    }
+    
+    thead {
+        background-color: $color__brand-white;
+    }
 }

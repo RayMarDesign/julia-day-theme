@@ -367,11 +367,25 @@
 	.nav-previous {
 		float: left;
 		width: 50%;
+
+        a:before {
+            content: "\f100";
+            font-family: FontAwesome;
+            font-weight: 400;
+            padding-right: 0.4em;
+        }
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+        
+        a:after {
+            content: "\f101";
+            font-family: FontAwesome;
+            font-weight: 400;
+            padding-left: 0.4em;
+        }
 	}
 }

@@ -13,12 +13,20 @@ body {
 }
 
 blockquote, q {
-	quotes: "" "";
-
-	&:before,
-	&:after {
-		content: "";
-	}
+    margin: 1.5em 0 2.5em 2em;
+    font-family: $font__quotes;
+    font-size: 2em;
+    line-height: 1.3em;
+    position: relative;
+    
+    &:before {
+        content: "\201c";
+        font-size: 3em;
+        display: inline-block;
+        position: absolute;
+        left: -.6em;
+        top: .2em;
+    }
 }
 
 hr {

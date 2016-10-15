@@ -8,8 +8,8 @@ $color__background-body: $color__brand-grey;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: $color__brand-2;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__background-pre: $color__brand-white;
+$color__background-ins: #debaba;
 
 $color__text-screen: #21759b;
 $color__text-input: $color__brand-black;
@@ -17,6 +17,7 @@ $color__text-input-focus: $color__text-input;
 $color__link: $color__brand-2;
 $color__link-visited: $color__link;
 $color__link-hover: darken($color__link, 20%);
+$color__link-underline: darken($color__brand-grey, 20%);
 $color__text-main: $color__brand-black;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -24,3 +25,4 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: $color__brand-black;
 $color__border-abbr: $color__brand-black;
+$color__border-entry-footer: darken($color__brand-grey, 20%);
