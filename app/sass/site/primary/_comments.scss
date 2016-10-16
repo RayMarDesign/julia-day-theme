@@ -1,6 +1,166 @@
+.comments-area {
+    margin: 4em 0;
+    
+    @media screen and (min-width: 50em) {
+        margin: 4em 3em;
+        font-size: 1.1em;
+    }
+}
+
+.comments-title {
+    margin-bottom: 2em;
+    font-size: 2em;
+}
+
+.comment-list,
+.comment-list ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.comment-content ol {
+    list-style-type: decimal;
+}
+
+.comment-body {
+    border-bottom: 1px solid #333;
+    margin-bottom: 3em;
+}
+
+.comment-meta {
+    position: relative;
+    margin-left: 70px;
+    font-style: italic;
+    font-size: 80%;
+    
+    @media screen and (min-width: 30em) {
+        font-size: 90%;
+    }
+    
+    a {
+        text-decoration: none;
+        
+        &:hover,
+        &:focus {
+            border-bottom: 2px solid $color__brand-black;
+        }
+    }
+}
+
+.comment .avatar {
+    position: absolute;
+    left: -70px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    top: -5px;
+    
+    @media screen and (min-width: 30em) {
+        left: -80px;
+        top: -7px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    @media screen and (min-width: 50em) {
+        left: -90px;
+        top: -8px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.children {
+    margin-left: 0;
+    padding-left: 0;
+    
+    @media screen and (min-width: 30em) {
+        margin-left: 2em;
+    }
+    
+    @media screen and (min-width: 50em) {
+        margin-left: 3em;
+    }
+}
+
+.comment-content,
+.comment-meta {
+    @media screen and (min-width: 30em) {
+        margin-left: 80px;
+    }
+    
+    @media screen and (min-width: 50em) {
+        margin-left: 90px;
+    }
+}
+
+.comment-author {
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+
+.says {
+    font-size: 80%;
+}
+
+.comment-metadata {
+    margin-top: .2em;
+    padding-bottom: .5em;
+    font-size: .8em;
+    line-height: 1em;
+    
+    a {
+        color: $color__link-underline;
+        
+        &:hover,
+        &:focus {
+            border-color: $color__link-underline;
+        }
+    }
+    
+    .edit-link:before {
+        content: "| ";
+        padding: 0 .3em;
+        color: $color__link-underline;
+    }
+}
+
+.reply {
+    margin-bottom: 1.5em;
+    text-align: right;
+    
+    a {
+        display: inline-block;
+        padding: .5em 1.4em;
+        font-size: 85%;
+        line-height: 1.3em;
+        color: $color__brand-white;
+        background-color: $color__background-button;
+        text-decoration: none;
+        
+        &:hover,
+        &:focus {
+            background-color: $color__link-hover;
+        }
+    }
+}
+
+.comment {
+    ol,
+    ul {
+        margin-left: 1.7em;
+        padding-left: 1.7em;
+    }
+}
+
+.bypostauthor .avatar {
+    box-sizing: content-box;
+    border: 5px solid $color__link-underline;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
 .comment-content a {
 	word-wrap: break-word;
-}
-.bypostauthor {
-	display: block;
 }
