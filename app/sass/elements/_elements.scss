@@ -43,4 +43,8 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+figure {
+    margin: 0; /* Remove margins defined in normalize.css */
+}
+
 @import "tables";

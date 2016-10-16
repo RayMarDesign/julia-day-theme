@@ -20,7 +20,8 @@ img.align {
     }
 }
 @media screen and (min-width: 50em) {
-    img.align {
+    img.align,
+    .wp-caption.align {
         &left {
             margin-left: -1.5em;
         }
@@ -31,7 +32,8 @@ img.align {
     }
 }
 @media screen and (min-width: 74em) {
-    img.align {
+    img.align,
+    .wp-caption.align {
         &left {
             margin-left: -3em;
         }
