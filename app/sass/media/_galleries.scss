@@ -1,5 +1,5 @@
 .gallery {
-	margin-bottom: 1.5em;
+	margin: 1.5em 0;
 }
 
 .gallery-item {
@@ -7,6 +7,33 @@
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+    padding: 1em;
+    
+    img {
+        display: block;
+    }
+    
+    a {
+        display: inline-block;
+        border-bottom: none;
+        
+        &:hover,
+        &:focus {
+            border-bottom: none;
+            box-shadow: none;
+            
+            img {
+                background-color: $color__background-caption;
+            }
+        }
+        
+        img {
+            padding: .4em;
+            margin: 0 auto;
+            background-color: $color__brand-white;
+        }
+    }
+    
 
 	.gallery-columns-2 & {
 		max-width: 50%;
@@ -43,4 +70,10 @@
 
 .gallery-caption {
 	display: block;
+    margin: 0;
+    border: none;
+    
+    &:before {
+        content: "";
+    }
 }
