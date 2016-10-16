@@ -13,6 +13,7 @@ body {
 }
 
 blockquote, q {
+    display: block;
     margin: 1.5em 0 2.5em 2em;
     font-family: $font__quotes;
     font-size: 2em;
