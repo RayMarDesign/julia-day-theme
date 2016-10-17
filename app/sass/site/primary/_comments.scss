@@ -161,6 +161,15 @@
     margin-left: -4px;
 }
 
+.comment-awaiting-moderation {
+    border: 1px solid $color__border-entry-footer;
+    border-radius: .6em;
+    padding: 0.5em 1.2em;
+    background-color: $color__background-notice;
+    font-size: 80%;
+    margin: 1em 0 0;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
