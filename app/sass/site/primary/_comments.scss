@@ -8,7 +8,7 @@
 }
 
 .comments-title {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-size: 2em;
 }
 
@@ -172,4 +172,73 @@
 
 .comment-content a {
 	word-wrap: break-word;
+}
+
+
+/* Comment Form */
+
+.comment-respond::after {
+	display: block;
+	margin: 2em auto 4em;
+	content: "";
+	width: 5em;
+	border-bottom: 1px solid $color__border-entry-footer;
+}
+
+.comment-reply-title {
+	margin-bottom: 1em;
+    
+    small {
+        display: block;
+        font-size: 60%;
+    }
+}
+
+.comment-form {
+	line-height: 1.3em;
+
+    a {
+        font-weight: 500;
+    }
+
+    &-author,
+    &-email,
+    &-url {
+        input {
+            width: 100%;
+            max-width: 24em;
+        }
+    }
+    
+    .form-submit {
+        margin-top: 3em;
+
+        input {
+            display: inline-block;
+            padding: .5em 1.4em;
+            font-size: 85%;
+            line-height: 1.3em;
+            color: $color__brand-white;
+            background-color: $color__background-button;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                background-color: $color__link-hover;
+            }
+        }
+    }
+
+    label {
+        width: 33%;
+        display: block;
+        font-style: italic;
+        padding-bottom: .4em;
+    }
+
+    .required {
+        color: $color__brand-1;
+        font-weight: 700;
+        font-style: normal;
+    }
 }

@@ -1022,6 +1022,11 @@ a:hover, a:active {
   }
 }
 
+.comment-navigation a {
+  padding: .5em 1em;
+  font-size: 90%;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1439,7 +1444,7 @@ a:hover, a:active {
 }
 
 .comments-title {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 2em;
 }
 
@@ -1595,13 +1600,84 @@ a:hover, a:active {
 
 .bypostauthor .avatar {
   box-sizing: content-box;
-  border: 5px solid #a6a6a6;
-  margin-top: -5px;
-  margin-left: -5px;
+  border: 4px solid #990100;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+
+.comment-awaiting-moderation {
+  border: 1px solid #a6a6a6;
+  border-radius: .6em;
+  padding: 0.5em 1.2em;
+  background-color: #4dff4d;
+  font-size: 80%;
+  margin: 1em 0 0;
 }
 
 .comment-content a {
   word-wrap: break-word;
+}
+
+/* Comment Form */
+.comment-respond::after {
+  display: block;
+  margin: 2em auto 4em;
+  content: "";
+  width: 5em;
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.comment-reply-title {
+  margin-bottom: 1em;
+}
+
+.comment-reply-title small {
+  display: block;
+  font-size: 60%;
+}
+
+.comment-form {
+  line-height: 1.3em;
+}
+
+.comment-form a {
+  font-weight: 500;
+}
+
+.comment-form-author input, .comment-form-email input, .comment-form-url input {
+  width: 100%;
+  max-width: 24em;
+}
+
+.comment-form .form-submit {
+  margin-top: 3em;
+}
+
+.comment-form .form-submit input {
+  display: inline-block;
+  padding: .5em 1.4em;
+  font-size: 85%;
+  line-height: 1.3em;
+  color: #f6f6f6;
+  background-color: #b90504;
+  text-decoration: none;
+}
+
+.comment-form .form-submit input:hover, .comment-form .form-submit input:focus {
+  background-color: #550202;
+}
+
+.comment-form label {
+  width: 33%;
+  display: block;
+  font-style: italic;
+  padding-bottom: .4em;
+}
+
+.comment-form .required {
+  color: #990100;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /*--------------------------------------------------------------
