@@ -10,7 +10,8 @@ img.align {
     }
 }
 
-.centered-image {
+.centered-image,
+.featured-image {
     max-width: calc(100% + 2.8em);
     margin: 2em -1.4em;
     
@@ -41,5 +42,23 @@ img.align {
         &right {
             margin-right: -3em;
         }
+    }
+}
+
+.featured-image {
+    margin-top: -1.4em;
+    margin-bottom: -1.4em;
+    
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    @media screen and (min-width: 30em) {
+        margin-top: -1.8em;
+    }
+    
+    @media screen and (min-width: 37.5em) {
+        margin-top: 3em;
     }
 }
