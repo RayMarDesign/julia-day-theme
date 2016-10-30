@@ -42,7 +42,6 @@
     word-wrap: break-word;
     
     a {
-        color: inherit;
         text-decoration: none;
         
         &:hover,
@@ -182,11 +181,22 @@
     }
 }
 
-.entry-footer {
+.entry-footer,
+.index-entry-meta {
 	font-size: 90%;
 	font-style: italic;
 	text-align: center;
-    
+}
+
+.entry-footer span,
+.index-entry-meta {
+    a {
+        font-weight: 700;
+        text-decoration: none;
+    }
+}
+
+.entry-footer {
     &::before,
     &::after {
         display: block;
@@ -214,11 +224,6 @@
         &:last-of-type::after {
             content: "";
             padding: 0;
-        }
-
-        a {
-            font-weight: 700;
-            text-decoration: none;
         }
     }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: juliaday
 Theme URI: http://github.com/RayMarDesign/julia-day-theme
@@ -360,20 +361,6 @@ h6 {
 .site-main {
   font-size: 1em;
   line-height: 1.6em;
-}
-
-.page-title {
-  font-style: italic;
-  font-size: 1.6em;
-  text-align: center;
-}
-
-.page-title::after {
-  display: block;
-  content: "";
-  width: 3.5em;
-  border-bottom: 1px solid #a6a6a6;
-  margin: 1.2em auto;
 }
 
 .archive-description {
@@ -1196,6 +1183,83 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Indexes
+--------------------------------------------------------------*/
+.page-title {
+  font-style: italic;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.page-title::after {
+  display: block;
+  content: "";
+  width: 3.5em;
+  border-bottom: 1px solid #a6a6a6;
+  margin: 1.2em auto;
+}
+
+.entry-title.index-excerpt {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: .5em;
+}
+
+@media screen and (min-width: 30em) {
+  .entry-title.index-excerpt {
+    margin-top: 1.5em;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .entry-header .index-entry-meta .byline,
+  .entry-header .index-entry-meta .posted-on,
+  .entry-header .index-entry-meta .comments-link {
+    display: inline-block;
+  }
+  .entry-header .index-entry-meta .byline::after,
+  .entry-header .index-entry-meta .comments-link::before {
+    content: "|";
+    padding: 0 1em;
+  }
+}
+
+.entry-content.index-excerpt {
+  margin-top: .3em;
+}
+
+.continue-reading {
+  text-align: center;
+}
+
+.continue-reading a {
+  display: inline-block;
+  margin: 1em auto;
+  padding: 1em 2em;
+  text-decoration: none;
+  background-color: #f6f6f6;
+  border: 1px solid #a6a6a6;
+}
+
+.continue-reading a:hover, .continue-reading a:focus {
+  background-color: #990100;
+  color: #f6f6f6;
+}
+
+.continue-reading a::after {
+  content: "…";
+}
+
+.continue-reading::after {
+  display: block;
+  content: "";
+  width: 7em;
+  border-bottom: 1px solid #a6a6a6;
+  margin: 4em auto 0;
+}
+
+/*--------------------------------------------------------------
 ## Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1248,7 +1312,6 @@ a:hover, a:active {
 }
 
 .entry-title a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -1394,10 +1457,17 @@ a:hover, a:active {
   }
 }
 
-.entry-footer {
+.entry-footer,
+.index-entry-meta {
   font-size: 90%;
   font-style: italic;
   text-align: center;
+}
+
+.entry-footer span a,
+.index-entry-meta a {
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .entry-footer::before, .entry-footer::after {
@@ -1430,11 +1500,6 @@ a:hover, a:active {
 .entry-footer span:last-of-type::after {
   content: "";
   padding: 0;
-}
-
-.entry-footer span a {
-  font-weight: 700;
-  text-decoration: none;
 }
 
 .site-content table {
@@ -1840,6 +1905,11 @@ img.alignleft, img.alignright {
 .featured-image img {
   display: block;
   margin: 0 auto;
+}
+
+.featured-image a:hover img,
+.featured-image a:focus img {
+  outline: 3px dashed #b90504;
 }
 
 @media screen and (min-width: 30em) {
