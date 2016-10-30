@@ -42,20 +42,6 @@ h6 { font-size: 1.4em; }
     line-height: 1.6em;
 }
 
-.page-title {
-    font-style: italic;
-    font-size: 1.6em;
-    text-align: center;
-    
-    &::after {
-        display: block;
-        content: "";
-        width: 3.5em;
-        border-bottom: 1px solid $color__border-entry-footer;
-        margin: 1.2em auto;
-    }
-}
-
 .archive-description {
     text-align: center;
     font-style: italic;
