@@ -14,7 +14,15 @@
         
         <?php if ( has_post_thumbnail() ) { ?>
             <figure class="featured-image">
-                <?php the_post_thumbnail(); ?>
+                <?php
+                if ( is_single() ) {
+                    the_post_thumbnail();
+                }
+                else { ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                    <?php the_post_thumbnail(); ?>
+                </a>                    
+                <?php } ?>
             </figure>
         <?php } ?>
         

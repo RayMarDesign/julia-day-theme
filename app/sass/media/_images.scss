@@ -54,6 +54,11 @@ img.align {
         margin: 0 auto;
     }
     
+    a:hover img,
+    a:focus img {
+        outline: 3px dashed $color__link;
+    }
+    
     @media screen and (min-width: 30em) {
         margin-top: -1.8em;
     }
