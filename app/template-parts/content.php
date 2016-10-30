@@ -73,7 +73,20 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php juliaday_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <?php if ( is_single() ) { ?>
+        <footer class="entry-footer">
+            <?php juliaday_entry_footer(); ?>
+        </footer><!-- .entry-footer -->
+    <?php } else { ?>
+        <div class="continue-reading">
+            <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                <?php
+                     printf(
+                         wp_kses( __( 'Continue reading %s', 'juliaday' ), array( 'span' => array( 'class' => array() ) ) ),
+                         the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                     );
+                ?>
+            </a>
+        </div>
+    <?php } ?>
 </article><!-- #post-## -->
