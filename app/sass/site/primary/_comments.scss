@@ -119,7 +119,7 @@
         }
     }
     
-    .edit-link:before {
+    .edit-link::before {
         content: "| ";
         padding: 0 .3em;
         color: $color__link-underline;

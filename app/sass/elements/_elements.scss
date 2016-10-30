@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*::before,
+*::after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
@@ -20,7 +20,7 @@ blockquote, q {
     line-height: 1.3em;
     position: relative;
     
-    &:before {
+    &::before {
         content: "\201c";
         font-size: 3em;
         display: inline-block;

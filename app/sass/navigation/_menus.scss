@@ -34,7 +34,7 @@
 					left: 100%;
 				}
                 
-                & + li:before {
+                & + li::before {
                     display: block;
                     content: "";
                     width: 60%;
@@ -286,7 +286,7 @@
             li {
                 float: none;
 
-                & + li:before {
+                & + li::before {
                     display: block;
                     content: "";
                     width: 60%;
@@ -299,7 +299,7 @@
         
         li {
             &.menu-item-has-children {
-                & > a:after {
+                & > a::after {
                     content: ">";
                     float: right;
                     margin-left: .5em;
@@ -307,8 +307,8 @@
                     transition: transform ease-in 300ms;
                 }
                 
-                &:hover > a:after,
-                &.focus > a:after {
+                &:hover > a::after,
+                &.focus > a::after {
                     transform: rotateZ(-90deg);
                 }
             }

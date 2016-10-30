@@ -23,7 +23,7 @@
         font-style: normal; /* Inverse emphasis because of all italics */
     }
     
-    &:before {
+    &::before {
         display: block;
         position: absolute;
         content: "\f112";

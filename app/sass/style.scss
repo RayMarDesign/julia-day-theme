@@ -142,7 +142,7 @@ $site-contact-padding: 2rem;
         }
     }
     
-    &:after {
+    &::after {
         display: block;
         content: "";
         clear: both;
