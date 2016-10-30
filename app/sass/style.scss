@@ -47,7 +47,7 @@
         text-decoration: none;
     }
     
-    &:after {
+    &::after {
         display: block;
         content: "";
         margin: .6em auto 0;
@@ -78,7 +78,7 @@
     }
 }
 
-@media screen and (max-width: 37.5em) {
+@media screen and (max-width: 37.4375em) {
     .site-header {
         &::after {
             background-color: $color__brand-1;
@@ -228,7 +228,7 @@ $site-contact-padding: 2rem;
 }
 
 $site-contact-padding: 1.2rem;
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 37.4375em) {
     .site-contact {
         font-size: 1.2rem;
         padding: $site-contact-padding;
