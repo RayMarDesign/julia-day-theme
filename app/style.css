@@ -1331,6 +1331,19 @@ a:hover, a:active {
 
 .sticky {
   display: block;
+  position: relative;
+}
+
+.sticky::before {
+  position: absolute;
+  top: -1.5em;
+  right: 0;
+  display: block;
+  font-family: FontAwesome;
+  content: "\f08d";
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .hentry {

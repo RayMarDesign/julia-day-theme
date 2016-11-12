@@ -22,6 +22,17 @@
 
 .sticky {
 	display: block;
+    position: relative;
+    
+    &::before {
+        position: absolute;
+        top: -1.5em;
+        right: 0;
+        display: block;
+        font-family: $font__icon;
+        content: "\f08d";
+        transform: rotate(30deg);
+    }
 }
 
 .hentry {
