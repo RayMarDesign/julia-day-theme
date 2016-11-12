@@ -27,7 +27,7 @@
         display: block;
         position: absolute;
         content: "\f112";
-        font-family: FontAwesome;
+        font-family: $font__icon;
         transform: rotate(180deg) scaleX(1.3);
         color: $color__border-caption;
         top: -6px;
