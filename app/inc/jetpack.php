@@ -32,10 +32,6 @@ add_action( 'after_setup_theme', 'juliaday_jetpack_setup' );
 function juliaday_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_format() );
-		endif;
+        get_template_part( 'template-parts/content', get_post_format() );
 	}
 }
