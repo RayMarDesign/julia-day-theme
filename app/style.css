@@ -905,7 +905,7 @@ a:hover, a:active {
 }
 
 .comment-navigation,
-.posts-navigation,
+.paging-navigation,
 .post-navigation {
   padding: 2em 0;
   text-align: left;
@@ -914,14 +914,14 @@ a:hover, a:active {
 
 @media screen and (min-width: 50em) {
   .comment-navigation,
-  .posts-navigation,
+  .paging-navigation,
   .post-navigation {
     padding: 2em 3em;
   }
 }
 
 .comment-navigation .nav-links,
-.posts-navigation .nav-links,
+.paging-navigation .nav-links,
 .post-navigation .nav-links {
   max-width: 45rem;
   margin: 0 auto;
@@ -930,7 +930,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 30em) {
   .comment-navigation .nav-links,
-  .posts-navigation .nav-links,
+  .paging-navigation .nav-links,
   .post-navigation .nav-links {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -946,21 +946,21 @@ a:hover, a:active {
 }
 
 .comment-navigation .meta-nav,
-.posts-navigation .meta-nav,
+.paging-navigation .meta-nav,
 .post-navigation .meta-nav {
   display: block;
 }
 
 @media screen and (min-width: 30em) {
   .comment-navigation .meta-nav,
-  .posts-navigation .meta-nav,
+  .paging-navigation .meta-nav,
   .post-navigation .meta-nav {
     padding-bottom: .6em;
   }
 }
 
 .comment-navigation a,
-.posts-navigation a,
+.paging-navigation a,
 .post-navigation a {
   display: block;
   width: 100%;
@@ -971,7 +971,7 @@ a:hover, a:active {
 }
 
 .comment-navigation a .post-title,
-.posts-navigation a .post-title,
+.paging-navigation a .post-title,
 .post-navigation a .post-title {
   font-size: 1.2em;
   font-weight: 700;
@@ -979,30 +979,30 @@ a:hover, a:active {
 }
 
 .comment-navigation a:hover, .comment-navigation a:focus,
-.posts-navigation a:hover,
-.posts-navigation a:focus,
+.paging-navigation a:hover,
+.paging-navigation a:focus,
 .post-navigation a:hover,
 .post-navigation a:focus {
   background-color: #990100;
 }
 
 .comment-navigation a:hover .post-title, .comment-navigation a:focus .post-title,
-.posts-navigation a:hover .post-title,
-.posts-navigation a:focus .post-title,
+.paging-navigation a:hover .post-title,
+.paging-navigation a:focus .post-title,
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
   text-decoration: underline;
 }
 
 .comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
+.paging-navigation .nav-previous,
 .post-navigation .nav-previous {
   padding-bottom: 1em;
 }
 
 @media screen and (min-width: 30em) {
   .comment-navigation .nav-previous,
-  .posts-navigation .nav-previous,
+  .paging-navigation .nav-previous,
   .post-navigation .nav-previous {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1018,7 +1018,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 30em) {
   .comment-navigation .nav-next,
-  .posts-navigation .nav-next,
+  .paging-navigation .nav-next,
   .post-navigation .nav-next {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1030,6 +1030,46 @@ a:hover, a:active {
     text-align: right;
     width: 48%;
   }
+}
+
+.paging-navigation {
+  margin-top: -2em;
+  text-align: center;
+}
+
+.paging-navigation ul.page-numbers {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.paging-navigation li {
+  display: inline-block;
+}
+
+.paging-navigation li a {
+  padding: .3em 1em;
+  margin: .4em .2em;
+  border: 1px solid #a6a6a6;
+}
+
+.paging-navigation .current {
+  padding: .3em 1em;
+  margin: .4em .2em;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  background-color: #f6f6f6;
+  border: 1px solid #a6a6a6;
+}
+
+.paging-navigation .dots {
+  padding: .3em .2em;
+  margin: .4em .2em;
+  font-weight: 700;
+  display: block;
+  width: 100%;
 }
 
 .comment-navigation a {
@@ -1774,7 +1814,7 @@ a:hover, a:active {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
+.infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
   display: none;
