@@ -9,9 +9,20 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="<?php
+                    if ( is_404() ) { echo 'error-404'; }
+                    else { echo 'no-results'; }
+                ?> not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'juliaday' ); ?></h1>
+		<h1 class="page-title"><?php
+            if ( is_404() ) {
+                esc_html_e( 'Oops! That page can&rsquo;t be found.', 'juliaday' );
+            } else if ( is_search() ) {
+                printf( esc_html__( 'Nothing found for &ldquo;%s&rdquo;', 'juliaday' ),  '<em>' . get_search_query() . '</em>' );
+            } else {
+                esc_html_e( 'Nothing Found', 'juliaday' );
+            }
+        ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -23,10 +34,14 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'juliaday' ); ?></p>
-			<?php
-				get_search_form();
-
-		else : ?>
+			<?php get_search_form(); ?>
+            
+        <?php elseif ( is_404() ) : ?>
+            
+            <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'juliaday' ); ?></p>
+            <?php get_search_form(); ?>
+        
+		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'juliaday' ); ?></p>
 			<?php
@@ -34,4 +49,27 @@
 
 		endif; ?>
 	</div><!-- .page-content -->
+    
+    <?php if ( is_404() || is_search() ) { ?>
+    <h1 class="page-title secondary-title"><?php esc_html_e( 'Most recent posts:', 'popperscores' ); ?></h1>
+    <?php
+        // Get the 6 latest posts
+        $args = array(
+            'posts_per_page' => 6,
+            'ignore_sticky_posts' => true
+        );
+        $latest_posts_query = new WP_Query( $args );
+        
+        // The Loop
+        if ( $latest_posts_query->have_posts() ) {
+            while ( $latest_posts_query->have_posts() ) {
+                $latest_posts_query->the_post();
+                // Get the standard index page content
+                get_template_part( 'template-parts/content', get_post_format() );
+            }
+        }
+        
+        /* Restore original Post Data */
+        wp_reset_postdata();
+    } // endif ?>
 </section><!-- .no-results -->
