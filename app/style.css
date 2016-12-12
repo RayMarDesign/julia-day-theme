@@ -377,6 +377,7 @@ h6 {
 --------------------------------------------------------------*/
 html {
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 *,
@@ -1171,6 +1172,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 1.5em;
+  overflow: hidden;
   /* Make sure select elements fit in widgets. */
 }
 
@@ -1184,6 +1186,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Global
 --------------------------------------------------------------*/
+.site {
+  background-color: #d9d9d9;
+}
+
 .content-area {
   overflow-x: hidden;
 }
@@ -1196,7 +1202,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 30em) {
   .site-main {
-    margin: 1.8em;
+    margin: 0 1.8em;
   }
 }
 
@@ -1206,17 +1212,10 @@ a:hover, a:active {
   }
 }
 
-@media screen and (min-width: 57em) {
-  .site-main {
-    max-width: 45em;
-    margin: 1.8em auto;
-  }
-}
-
-@media screen and (min-width: 57rem) {
+@media screen and (min-width: 80rem) {
   .container {
     position: relative;
-    max-width: 57rem;
+    max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1302,6 +1301,49 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Layout
 --------------------------------------------------------------*/
+/*
+57em
+font-size 80%
+width 16rem
+line-height 1.6em
+
+
+80em
+font-size 1rem
+width 20rem
+*/
+@media screen and (min-width: 57em) {
+  .site-content {
+    margin: 0 auto;
+    max-width: 82.7rem;
+    position: relative;
+    padding: 0 1.2em;
+  }
+  .content-area {
+    float: left;
+    width: 100%;
+  }
+  .site-main {
+    padding-right: 22rem;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    overflow: auto;
+  }
+  .widget-area {
+    position: relative;
+    width: 22rem;
+    margin-left: -22rem;
+    float: right;
+    overflow: hidden;
+    padding-right: 0 !important;
+  }
+  .site-footer {
+    clear: both;
+  }
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -2331,13 +2373,6 @@ img.alignleft, img.alignright {
 .site-info a:hover p,
 .site-info a:focus p {
   border-bottom-color: #f6f6f6;
-}
-
-/*
- * # Content
- */
-.site-content {
-  background-color: #d9d9d9;
 }
 
 /*
