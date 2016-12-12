@@ -802,9 +802,12 @@ a:hover, a:active {
   bottom: 1rem;
 }
 
-@media screen and (max-width: 52rem) {
+@media screen and (max-width: 57rem) {
   .footer-navigation {
     padding-right: inherit;
+  }
+  .footer-navigation ul {
+    margin-right: 0;
   }
   .footer-navigation li.menu-item-search {
     position: relative;

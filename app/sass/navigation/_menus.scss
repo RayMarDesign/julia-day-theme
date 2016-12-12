@@ -233,9 +233,13 @@
     }
 }
 
-@media screen and (max-width: 52rem) {
+@media screen and (max-width: 57rem) {
     .footer-navigation {
         padding-right: inherit;
+        
+        ul {
+            margin-right: 0;
+        }
         
         li.menu-item-search {
             position: relative;
