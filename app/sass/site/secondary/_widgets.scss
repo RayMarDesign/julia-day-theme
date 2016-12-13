@@ -1,9 +1,74 @@
 .widget {
 	margin: 0 0 1.5em;
+    padding: 1rem;
+    background-color: $color__brand-white;
     overflow: hidden;
 
-	/* Make sure select elements fit in widgets. */
+    &-area {
+        padding: 1.2rem;
+    }
+
+    &-title {
+        margin: 0 0 .3em;
+        line-height: 1em;
+        font-size: 1.8em
+    }
+    
 	select {
-		max-width: 100%;
+		width: 100%;
+        padding: .5em;
 	}
+    
+    ul,
+    ol,
+    .site-content & ul,
+    .site-content & ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 1.3em;
+    }
+    
+    li,
+    .site-content & li {
+        display: block;
+        padding: .3em 0;
+
+        ul,
+        ol {
+            margin-left: 1em;
+        }
+        
+        a {
+            font-weight: 400;
+        }
+    }
+    
+    /* RSS Widget */
+    &_rss li {
+        padding: .5em 0;
+        
+        .rsswidget {
+            display: block;
+            font-family: $font__headings;
+            font-size: 1.3em;
+            font-weight: 700 !important;
+            line-height: 1.3;
+        }
+        .rss-date {
+            display: block;
+            font-size: 80%;
+            line-height: 1.1;
+            margin: .5em 0 .5em 2em;
+            font-style: italic;
+        }
+        cite {
+            display: block;
+            text-align: right;
+            
+            &::before {
+                content: "- ";
+            }
+        }
+    }
 }

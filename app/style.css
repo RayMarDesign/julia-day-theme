@@ -1175,12 +1175,82 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 1.5em;
+  padding: 1rem;
+  background-color: #f6f6f6;
   overflow: hidden;
-  /* Make sure select elements fit in widgets. */
+  /* RSS Widget */
+}
+
+.widget-area {
+  padding: 1.2rem;
+}
+
+.widget-title {
+  margin: 0 0 .3em;
+  line-height: 1em;
+  font-size: 1.8em;
 }
 
 .widget select {
-  max-width: 100%;
+  width: 100%;
+  padding: .5em;
+}
+
+.widget ul,
+.widget ol,
+.site-content .widget ul,
+.site-content .widget ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.3em;
+}
+
+.widget li,
+.site-content .widget li {
+  display: block;
+  padding: .3em 0;
+}
+
+.widget li ul,
+.widget li ol,
+.site-content .widget li ul,
+.site-content .widget li ol {
+  margin-left: 1em;
+}
+
+.widget li a,
+.site-content .widget li a {
+  font-weight: 400;
+}
+
+.widget_rss li {
+  padding: .5em 0;
+}
+
+.widget_rss li .rsswidget {
+  display: block;
+  font-family: "Handlee", cursive, sans-serif;
+  font-size: 1.3em;
+  font-weight: 700 !important;
+  line-height: 1.3;
+}
+
+.widget_rss li .rss-date {
+  display: block;
+  font-size: 80%;
+  line-height: 1.1;
+  margin: .5em 0 .5em 2em;
+  font-style: italic;
+}
+
+.widget_rss li cite {
+  display: block;
+  text-align: right;
+}
+
+.widget_rss li cite::before {
+  content: "- ";
 }
 
 /*--------------------------------------------------------------
@@ -1331,7 +1401,7 @@ a:hover, a:active {
   }
 }
 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 68em) {
   .site-main {
     padding-right: 20rem;
   }
@@ -1350,7 +1420,7 @@ a:hover, a:active {
   }
 }
 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 68em) {
   .widget-area {
     width: 20rem;
     margin-left: -20rem;
@@ -2400,33 +2470,4 @@ img.alignleft, img.alignright {
 .site-info a:hover p,
 .site-info a:focus p {
   border-bottom-color: #f6f6f6;
-}
-
-/*
- * # Sidebar & Widgets
- */
-.site-content .widget-area {
-  padding: 1.2rem;
-}
-
-.site-content .widget-area section {
-  padding: 1rem;
-  background-color: #f6f6f6;
-}
-
-.site-content .widget-area section .widget-title {
-  margin: 0 0 .3em;
-  line-height: 1em;
-  font-size: 1.8em;
-}
-
-.site-content .widget-area ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0 2rem;
-  line-height: 1.3em;
-}
-
-.site-content .widget-area ul li + li {
-  margin-top: .6em;
 }
