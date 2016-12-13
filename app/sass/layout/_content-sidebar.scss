@@ -24,7 +24,7 @@
         overflow: auto;
     }
     
-    @media screen and (min-width: 80em) {
+    @media screen and (min-width: 68em) {
         padding-right: $size__site-sidebar;
     }
 }
@@ -41,7 +41,7 @@
         line-height: 1.6em;
     }
     
-    @media screen and (min-width: 80em) {
+    @media screen and (min-width: 68em) {
         width: $size__site-sidebar;
         margin-left: -$size__site-sidebar;
         font-size: 100%;
