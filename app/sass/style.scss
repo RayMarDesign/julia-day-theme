@@ -300,35 +300,3 @@ $site-contact-padding: 1.2rem;
         border-bottom-color: $color__brand-white;
     }
 }
-
-/*
- * # Sidebar & Widgets
- */
-
-.site-content {
-    .widget-area {
-        padding: 1.2rem;
-        
-        section {
-            padding: 1rem;
-            background-color: $color__brand-white;
-            
-            .widget-title {
-                margin: 0 0 .3em;
-                line-height: 1em;
-                font-size: 1.8em
-            }
-        }
-        
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 0 2rem;
-            line-height: 1.3em;
-            
-            li + li {
-                margin-top: .6em;
-            }
-        }
-    }
-}
