@@ -44,10 +44,10 @@
 		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'juliaday' ); ?></p>
-			<?php
+            <p><?php
 				get_search_form();
 
-		endif; ?>
+		endif; ?></p>
 	</div><!-- .page-content -->
     
     <?php if ( is_404() || is_search() ) { ?>
