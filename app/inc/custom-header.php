@@ -33,7 +33,7 @@ function juliaday_custom_header_setup() {
 		'default-text-color'    => 'f6f6f6',
 		'width'                 => 1600,
 		'height'                => 300,
-        'flex-width'            => true,
+        'flex-width'            => false,
         'flex-height'           => false,
 		'wp-head-callback'      => 'juliaday_header_style',
 	) ) );
